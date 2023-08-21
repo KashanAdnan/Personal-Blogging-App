@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login || Blogging App</title>
+    <link rel="stylesheet" href="../../css/login.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="../../index.html">Personal Blogging App</a>
+      <a href="./register.html">Signup</a>
+    </nav>
+    <header>
+      <h1>Login</h1>
+    </header>
+
+    <main>
+      <form class="form-container login">
+        <input
+          type="email"
+          required
+          name="email"
+          placeholder="Email"
+          id="email"
+        />
+        <input
+          type="password"
+          name="password"
+          required
+          placeholder="Password"
+          id="password"
+        />
+        <button>Login</button>
+      </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../js/login.mjs"></script>
+  </body>
+</html>

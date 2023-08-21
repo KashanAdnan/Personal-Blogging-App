@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register || Blogging App</title>
+    <link rel="stylesheet" href="../../css/signUp.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="../../index.html">Personal Blogging App</a>
+      <a href="./login.html">Login</a>
+    </nav>
+    <header>
+      <h1>Register</h1>
+    </header>
+
+    <main>
+      <form class="form-container signup">
+        <input
+          type="text"
+          required
+          name="fname"
+          placeholder="First Name"
+          id="fname"
+          minlength="3"
+          maxlength="20"
+        />
+        <input
+          type="text"
+          required
+          minlength="1"
+          maxlength="20"
+          name="lname"
+          placeholder="Last Name"
+          id="lname"
+        />
+        <input
+          type="email"
+          required
+          name="email"
+          placeholder="Email"
+          id="email"
+        />
+        <input
+          minlength="8"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          required
+          type="password"
+          name="password"
+          placeholder="Password"
+          id="password"
+        />
+        <input
+          type="password"
+          minlength="8"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          name="rpassword"
+          placeholder="Repeat Password"
+          id="rpassword"
+        />
+        <input type="file" name="file" id="file" />
+        <button>Signup</button>
+      </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../js/register.mjs"></script>
+  </body>
+</html>

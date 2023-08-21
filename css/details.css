@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+nav {
+  width: 100%;
+  background-color: #7749f8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 100px;
+  color: white;
+  position: fixed;
+  top: 0;
+}
+
+nav a {
+  font-weight: 400;
+  font-size: 22px;
+}
+
+nav a {
+  color: white;
+}
+
+header {
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px 100px;
+  position: fixed;
+  background-color: #fff;
+  top: 47px;
+}
+
+header a {
+  font-weight: 600;
+  color: #7749f8;
+  font-size: 30px;
+}
+
+nav div {
+  display: flex;
+}
+nav > div > a:last-child {
+  margin-left: 20px;
+}
+main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: 160px 100px 100px 100px;
+  background-color: #9597990e;
+  flex-direction: column;
+  height: auto;
+}
+.m {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.profile {
+  margin-left: 40px;
+  width: 100%;
+}
+.profile h3 {
+  text-decoration: underline;
+  margin-top: 10px;
+}
+.profile h1 {
+  margin-top: 10px;
+  color: #7749f8;
+}
+.blogs {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: auto;
+  flex-direction: column;
+}
+.profile img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: contain;
+  margin-top: 10px;
+}
+
+main .blog img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+main .blog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 881px;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff !important;
+  border-radius: 5px;
+  margin-top: 20px;
+  border: 1px solid #8c939d18;
+}
+
+.image-user {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.user-name {
+  margin-left: 30px;
+}
+
+main p {
+  width: 100%;
+  text-align: left;
+}
+
+main a {
+  text-align: left;
+  width: 100%;
+  margin-top: 10px;
+  color: #7749f8;
+}

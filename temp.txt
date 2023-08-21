@@ -1,0 +1,189 @@
+.header {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.header nav {
+    background: #7E49ED;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header nav h1 {
+    font-size: 1.9em;
+    font-weight: bold;
+}
+
+.Btn {
+    width: 100px;
+    font-size: 1em;
+    border-radius: 0.5em;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background: transparent;
+    margin: 0px 10px;
+    padding: 0px 10px;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    text-transform: uppercase;
+}
+
+
+.Btn:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+
+}
+
+.Btn:active {
+    transform: translateY(-2px) translateX(2px);
+}
+
+
+.heading {
+    width: 100%;
+    padding: 20px;
+    box-shadow: 8px 8px 11px #b5b5b5;
+}
+
+hr {
+    border: 1px solid #ffffff;
+}
+
+.heading h1 {
+    font-size: 1.5rm;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    background-color: #F8F9Fa;
+    padding: 20px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h1 {
+    font-size: 25px;
+    color: rgb(47, 47, 47);
+    margin-top: 20px;
+}
+
+.boxs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.box {
+    width: 1000px;
+    height: 300px;
+    border: 1px solid #ececec;
+    border-radius: 0.5em;
+    background: #ffffff;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.details {
+    display: flex;
+}
+
+.details .img img {
+    width: 80px;
+    border-radius: 0.5em;
+}
+
+.details .information {
+    margin-left: 15px;
+    margin-top: 13px;
+}
+
+.details .information h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.details .information .info {
+    display: flex;
+}
+
+.details .information .info h2 {
+    font-size: 1em;
+}
+
+.post {
+    margin-top: 10px;
+}
+
+.post p {
+    text-align: start;
+    font-size: 1em;
+}
+
+.readMore {
+    margin-top: 15px;
+}
+
+.readMore a {
+    text-decoration: none;
+    font-size: 1em;
+    color: #7E49ED;
+}
+
+async function del(toDel) {
+    Swal.fire({
+        title: 'Are you sure you want to Delete',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#1ca1f1',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Delete!'
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+            await deleteDoc(doc(db, "blogs", toDel)).then(()=>{
+                location.reload()
+            })
+        }
+    }).catch((error) => {
+    });
+}
+
+function edit(id) {
+    const azaan = doc(db, "blogs", id);
+    
+    Swal.fire({
+        title: `Enter Values to Replace`,
+        html:
+            `<input id="title" class="swal2-input" placeholder="Enter new title" type="text" required>
+            <input id="description" class="swal2-input" placeholder="Enter new description" type="text" required>`,
+        confirmButtonText: 'Replace / Edit !',
+        showLoaderOnConfirm: true,
+        preConfirm: () => {
+            const titleValue = Swal.getPopup().querySelector('#title').value;
+            const descriptionValue = Swal.getPopup().querySelector('#description').value;
+            return { titleValue, descriptionValue };
+        }
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+            await updateDoc(azaan, {
+                title: result.value.titleValue,
+                description: result.value.descriptionValue
+            });
+            Swal.fire({
+                title: `Values Replaced`,
+                icon: 'success'
+            })
+        }
+    });
+}
